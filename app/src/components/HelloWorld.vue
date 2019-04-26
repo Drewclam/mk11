@@ -78,7 +78,7 @@ export default {
     result: String
   },
   created: function() {
-    fetch("http://127.0.0.1:3000")
+    fetch("http://localhost:3000")
       .then(res => res.json())
       .then(console.log);
   }
