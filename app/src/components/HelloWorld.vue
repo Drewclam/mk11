@@ -78,7 +78,7 @@ export default {
     result: String
   },
   created: function() {
-    fetch("http://localhost:3000")
+    fetch("http://localhost:3000/fighters")
       .then(res => res.json())
       .then(console.log);
   }

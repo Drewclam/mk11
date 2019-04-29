@@ -1,5 +1,9 @@
 const express = require('express');
 const mysql = require('mysql');
+const router = require('./router');
+const data = require('./data');
+const scripts = require('./scripts');
+
 const app = express();
 const port = 3000;
 
@@ -17,7 +21,13 @@ connection.connect(err => {
 
   console.log('Connection established to MYSQL.');
 
-  connection.query('CREATE DATABASE my_db', err => console.log);
+  connection.query('DROP DATABASE IF EXISTS my_db');
+  connection.query('CREATE DATABASE my_db');
+  connection.query('USE my_db');
+  connection.query(scripts.createFightersTable, err => {
+    if (err) throw err;
+    data.fighters.forEach(fighter => connection.query(scripts.insertFighter(fighter.name)));
+  });
 });
 
 app.use((req, res, next) => {
@@ -26,6 +36,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => res.send({ message: 'Hello world' }));
+app.get('/', router);
 
 app.listen(port, () => console.log(`Backend listening on port ${port}`));
