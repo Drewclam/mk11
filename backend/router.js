@@ -10,9 +10,10 @@ router.get('/', (req, res) => {
 
 router.get('/fighters', (req, res) => {
   connection.connect(err => {
-    console.log(connection.query(scripts.selectFighters));
+    connection.query(scripts.selectFighters, (err, fighters) => {
+      res.send({ fighters });
+    });
   });
-  res.send({ message: 'fighters path' });
 });
 
 module.exports = router;

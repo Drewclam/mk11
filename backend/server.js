@@ -1,18 +1,11 @@
 const express = require('express');
-const mysql = require('mysql');
 const router = require('./router');
 const data = require('./data');
 const scripts = require('./scripts');
+const connection = require('./dbConnect');
 
 const app = express();
 const port = 3000;
-
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  port: 3306,
-});
 
 connection.connect(err => {
   if (err) {
@@ -36,6 +29,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', router);
+app.use('/', router);
 
 app.listen(port, () => console.log(`Backend listening on port ${port}`));
