@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 router.get('/fighters', (req, res) => {
   connection.connect(err => {
     connection.query(scripts.selectFighters, (err, fighters) => {
-      res.send({ fighters });
+      res.send(fighters);
     });
   });
 });

@@ -67,6 +67,10 @@
         <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a>
       </li>
     </ul>
+    <div v-bind:key="fighter.id" v-for="fighter in fighters">
+      <img v-bind:src="fighter.image_url">
+      <span>{{ fighter.name }}</span>
+    </div>
   </div>
 </template>
 
@@ -74,13 +78,17 @@
 export default {
   name: "HelloWorld",
   props: {
-    msg: String,
-    result: String
+    msg: String
+  },
+  data: function() {
+    return {
+      fighters: null
+    };
   },
   created: function() {
     fetch("http://localhost:3000/fighters")
       .then(res => res.json())
-      .then(console.log);
+      .then(json => (this.fighters = json));
   }
 };
 </script>

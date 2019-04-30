@@ -19,7 +19,7 @@ connection.connect(err => {
   connection.query('USE my_db');
   connection.query(scripts.createFightersTable, err => {
     if (err) throw err;
-    data.fighters.forEach(fighter => connection.query(scripts.insertFighter(fighter.name)));
+    data.fighters.forEach(fighter => connection.query(scripts.insertFighter(fighter)));
   });
 });
 
