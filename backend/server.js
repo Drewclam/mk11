@@ -17,6 +17,10 @@ connection.connect(err => {
   connection.query('DROP DATABASE IF EXISTS my_db');
   connection.query('CREATE DATABASE my_db');
   connection.query('USE my_db');
+  connection.query(scripts.createInputsTable, err => {
+    if (err) throw err;
+    data.inputs.forEach(input => connection.query(scripts.insertInput(input)));
+  });
   connection.query(scripts.createFightersTable, err => {
     if (err) throw err;
     data.fighters.forEach(fighter => connection.query(scripts.insertFighter(fighter)));

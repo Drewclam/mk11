@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <div class="flex" v-bind:key="fighter.id" v-for="fighter in fighters">
-      <img v-bind:src="fighter.image_url">
-      <span>{{ fighter.name }}</span>
+  <div class="flex">
+    <div v-bind:key="fighter.id" v-for="fighter in fighters">
+      <div class="flex flex-column pa3">
+        <img class="h5 w-auto" v-bind:src="fighter.image_url">
+        <span class="pt2">{{ fighter.name }}</span>
+      </div>
     </div>
   </div>
 </template>
