@@ -55,7 +55,7 @@ const inputs = [
     value: 11,
   },
   {
-    name: 'R1', // Interact
+    name: 'R1', // Interact, EX
     value: 12,
   },
   {

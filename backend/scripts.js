@@ -9,7 +9,7 @@ const createInputsTable = `CREATE TABLE inputs (
   value int
 )`;
 
-const selectFighters = `SELECT * FROM fighters`;
+const selectAllFromTable = table => `SELECT * from ${table}`;
 
 const insertFighter = fighter =>
   `INSERT INTO fighters (name, image_url) VALUES ('${fighter.name}', '${fighter.imageUrl}');`;
@@ -21,5 +21,5 @@ module.exports = {
   createInputsTable,
   insertFighter,
   insertInput,
-  selectFighters,
+  selectAllFromTable,
 };

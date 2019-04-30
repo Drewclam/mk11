@@ -10,8 +10,16 @@ router.get('/', (req, res) => {
 
 router.get('/fighters', (req, res) => {
   connection.connect(err => {
-    connection.query(scripts.selectFighters, (err, fighters) => {
+    connection.query(scripts.selectAllFromTable('fighters'), (err, fighters) => {
       res.send(fighters);
+    });
+  });
+});
+
+router.get('/inputs', (req, res) => {
+  connection.connect(err => {
+    connection.query(scripts.selectAllFromTable('inputs'), (err, inputs) => {
+      res.send(inputs);
     });
   });
 });
