@@ -25,6 +25,9 @@ connection.connect(err => {
     if (err) throw err;
     data.fighters.forEach(fighter => connection.query(scripts.insertFighter(fighter)));
   });
+  connection.query(scripts.createMovesTable, err => {
+    if (err) throw err;
+  });
 });
 
 app.use((req, res, next) => {

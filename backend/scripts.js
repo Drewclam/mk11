@@ -6,7 +6,13 @@ const createFightersTable = `CREATE TABLE fighters (
 
 const createInputsTable = `CREATE TABLE inputs (
   name text,
-  value int
+  value text
+)`;
+
+const createMovesTable = `CREATE TABLE moves (
+  fighter_id int,
+  move text,
+  FOREIGN KEY (fighter_id) REFERENCES fighters(id)
 )`;
 
 const selectAllFromTable = table => `SELECT * from ${table}`;
@@ -19,6 +25,7 @@ const insertInput = input =>
 module.exports = {
   createFightersTable,
   createInputsTable,
+  createMovesTable,
   insertFighter,
   insertInput,
   selectAllFromTable,

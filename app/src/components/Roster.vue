@@ -1,17 +1,17 @@
 <template>
   <div class="flex">
-    <div v-bind:key="fighter.id" v-for="fighter in fighters">
-      <div class="flex flex-column pa3">
-        <img class="h5 w-auto" v-bind:src="fighter.image_url">
+    <div :key="fighter.id" v-for="fighter in fighters">
+      <router-link :to="'/fighter/' + fighter.id" class="flex flex-column pa3">
+        <img class="h5 w-auto" :src="fighter.image_url">
         <span class="pt2">{{ fighter.name }}</span>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Roster",
   props: {
     msg: String
   },
