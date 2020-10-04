@@ -1,0 +1,77 @@
+{
+  "name": "Sub-Zero",
+  "moves": [
+    {
+      "name": "straight chop",
+      "input": "1",
+      "damage": {
+        "base": 2,
+        "block": 0.3,
+        "flawless": 0.0003
+      },
+      "frames": {
+        "start": 8,
+        "active": 2,
+        "recovery": 15,
+        "hit": 6,
+        "block": 0,
+        "flawless": 0,
+        "cancel": 11
+      }
+    },
+    {
+      "name": "axe bash",
+      "input": "b1",
+      "damage": {
+        "base": 3,
+        "block": 0.45,
+        "flawless": 0.0005
+      },
+      "frames": {
+        "start": 14,
+        "active": 3,
+        "recovery": 26,
+        "hit": 6,
+        "block": -2,
+        "flawless": -2,
+        "cancel": 17
+      }
+    },
+    {
+      "name": "low back hand",
+      "input": "d1",
+      "damage": {
+        "base": 2,
+        "block": 0.3,
+        "flawless": 0.0003
+      },
+      "frames": {
+        "start": 6,
+        "active": 2,
+        "recovery": 16,
+        "hit": 9,
+        "block": -6,
+        "flawless": -6,
+        "cancel": 17
+      }
+    },
+    {
+      "name": "icygrave",
+      "input": "b14",
+      "damage": {
+        "base": 3,
+        "block": 0.45,
+        "flawless": 0.0005
+      },
+      "frames": {
+        "start": 22,
+        "active": 4,
+        "recovery": 22,
+        "hit": 10,
+        "block": -4,
+        "flawless": -4,
+        "cancel": 27
+      }
+    }
+  ]
+}

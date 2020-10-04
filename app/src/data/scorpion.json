@@ -1,0 +1,61 @@
+{
+  "name": "Scorpion",
+  "moves": [
+    {
+      "name": "Straight Punch",
+      "type": "H",
+      "input": "1",
+      "damage": {
+        "base": 2,
+        "block": 0.3,
+        "flawless": 0.0003
+      },
+      "frames": {
+        "start": 7,
+        "active": 2,
+        "recovery": 17,
+        "hit": 4,
+        "block": -2,
+        "flawless": -2,
+        "cancel": 11
+      }
+    },
+    {
+      "name": "Gut Slice",
+      "input": "B1",
+      "type": "M",
+      "damage": {
+        "base": 3,
+        "block": 0.45,
+        "flawless": 0.0005
+      },
+      "frames": {
+        "start": 14,
+        "active": 2,
+        "recovery": 29,
+        "hit": 9,
+        "block": -14,
+        "flawless": -14,
+        "cancel": 21
+      }
+    },
+    {
+      "name": "Spear",
+      "input": "BF+1",
+      "damage": {
+        "base": 11,
+        "block": 1.37,
+        "flawless": 0.0014
+      },
+      "frames": {
+        "start": 17,
+        "active": 30,
+        "recovery": 20,
+        "hit": 16,
+        "block": -65,
+        "flawless": -65,
+        "cancel": 51
+      }
+    }
+  ]
+}
